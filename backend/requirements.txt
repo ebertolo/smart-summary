@@ -26,6 +26,7 @@ tiktoken==0.8.0
 # Extractive summarization (fast, no GPU required)
 sumy==0.11.0
 nltk==3.9.1
+numpy==2.3.4
 
 # Database
 sqlalchemy==2.0.36
