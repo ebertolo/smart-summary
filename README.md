@@ -164,38 +164,38 @@ For detailed backend setup, see [Backend Quick Start](backend/QUICKSTART.md)
 - Docker & Docker Compose
 - Anthropic API key ([Get one here](https://console.anthropic.com/))
 
-### Quick Start with Docker 🐳 (Primeira Vez)
+### Quick Start with Docker 🐳 (First Time Setup)
 
 ```bash
-# 1. Clone o repositório
+# 1. Clone the repository
 git clone <your-repo-url>
 cd smart-summary
 
-# 2. Configure o Backend
+# 2. Configure the Backend
 cp backend/.env.example backend/.env
-# Edite backend/.env e adicione suas chaves de API:
-# - ANTHROPIC_API_KEY=sua-chave-aqui
-# - Altere JWT_SECRET para uma nova chave segura
-# - Defina DEMO_USER_PASSWORD com sua senha preferida
+# Edit backend/.env and add your API keys:
+# - ANTHROPIC_API_KEY=your-key-here
+# - Change JWT_SECRET to a new secure key
+# - Set DEMO_USER_PASSWORD with your preferred password
 
-# 3. Configure o Frontend
+# 3. Configure the Frontend
 cp frontend/.env.example frontend/.env.local
-# O padrão já está correto: NEXT_PUBLIC_API_URL=http://localhost:8000
+# Default is already correct: NEXT_PUBLIC_API_URL=http://localhost:8000
 
-# 4. Suba os containers (isso irá buildar e iniciar tudo)
+# 4. Start the containers (this will build and start everything)
 docker-compose up --build
 
-# 5. Acesse a aplicação
+# 5. Access the application
 # Frontend: http://localhost:3000
 # Backend API: http://localhost:8000/docs
 ```
 
-**⚠️ IMPORTANTE:** 
-- Os arquivos `.env` (backend) e `.env.local` (frontend) **devem ser criados** antes de rodar o Docker
-- No arquivo `backend/.env`, **altere as chaves de API** (ANTHROPIC_API_KEY ou OPENAI_API_KEY)
-- O usuário demo é criado automaticamente com a senha definida em `DEMO_USER_PASSWORD`
+**⚠️ IMPORTANT:** 
+- The `.env` (backend) and `.env.local` (frontend) files **must be created** before running Docker
+- In the `backend/.env` file, **change the API keys** (ANTHROPIC_API_KEY or OPENAI_API_KEY)
+- The demo user is created automatically with the password defined in `DEMO_USER_PASSWORD`
 
-**Credenciais Demo:** Username: `demo` / Password: (conforme definido em `DEMO_USER_PASSWORD`)
+**Demo Credentials:** Username: `demo` / Password: (as defined in `DEMO_USER_PASSWORD`)
 
 ### Local Development (Without Docker)
 
