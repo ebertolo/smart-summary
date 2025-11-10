@@ -1,0 +1,28 @@
+# Render.com deployment configuration for Smart Summary API
+services:
+  - type: web
+    name: smart-summary-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: JWT_EXPIRATION_MINUTES
+        value: 60
+      - key: LLM_PROVIDER
+        value: anthropic
+      - key: LLM_MODEL
+        value: claude-3-5-sonnet-20241022
+      - key: LLM_TEMPERATURE
+        value: 0.3
+      - key: LLM_MAX_TOKENS
+        value: 4096
+    healthCheckPath: /health

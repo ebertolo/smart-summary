@@ -1,0 +1,47 @@
+# Smart Summary API - Python Dependencies
+
+# FastAPI and server
+fastapi==0.121.1
+uvicorn[standard]==0.38.0
+python-multipart==0.0.20
+
+# Authentication
+python-jose[cryptography]==3.5.0
+bcrypt==4.1.2
+
+# LangChain ecosystem
+langchain==1.0.5
+langchain-core==1.0.4
+langchain-anthropic==1.0.2
+langchain-openai==1.0.2
+langchain-text-splitters==1.0.0
+
+# LLM APIs
+anthropic==0.72.0
+openai==2.7.1
+
+# Token counting
+tiktoken==0.8.0
+
+# Extractive summarization (fast, no GPU required)
+sumy==0.11.0
+nltk==3.9.1
+
+# Database
+sqlalchemy==2.0.36
+aiosqlite==0.21.0
+
+# Settings and environment
+pydantic==2.12.4
+pydantic-settings==2.11.0
+python-dotenv==1.2.1
+
+# Development and testing
+pytest==8.4.2
+pytest-asyncio==1.2.0
+pytest-cov==7.0.0
+httpx==0.28.1
+
+# Code quality
+black==25.9.0
+isort==5.13.2

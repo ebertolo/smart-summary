@@ -28,6 +28,9 @@ RUN python -c "import nltk; nltk.download('punkt', download_dir='/usr/local/nltk
 # Copy application code
 COPY . .
 
+# Ensure .env file exists (will be overridden by env_file in docker-compose)
+RUN touch .env
+
 # Create non-root user
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
 USER appuser
