@@ -185,7 +185,7 @@ cp frontend/.env.example frontend/.env.local
 # 4. Start the containers (this will build and start everything)
 docker-compose up --build
 
-# 5. Access the application
+# 5. Access the application with user id: demo and pwd as set in .env file
 # Frontend: http://localhost:3000
 # Backend API: http://localhost:8000/docs
 ```
