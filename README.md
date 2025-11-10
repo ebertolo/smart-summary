@@ -107,7 +107,7 @@ Control the target summary length as a percentage of the original text:
 | **AI Models** | Anthropic Claude | Text summarization |
 | **Auth** | JWT (python-jose) | Token-based security |
 | **Testing** | Pytest + Jest | Unit and integration tests |
-| **Deployment** | Vercel + Render | Serverless + containers |
+| **Deployment** | Docker (Vercel/Render Compatible) | Serverless + containers |
 
 ## 📁 Project Structure
 

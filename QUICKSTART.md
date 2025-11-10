@@ -13,7 +13,10 @@ Get the Smart Summary App up and running quickly with Docker. For backend-only d
 git clone <your-repo-url>
 cd smart-summary-app
 cp backend/.env.example backend/.env
-# Edit backend/.env and add: ANTHROPIC_API_KEY=sk-ant-your-key-here
+# Edit .env and add your keys:
+# - ANTHROPIC_API_KEY=your-key-here
+# - JWT_SECRET=your-secret-key
+# - DEMO_USER_PASSWORD=your-demo-password
 ```
 
 ### 2. Start with Docker

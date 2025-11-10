@@ -20,6 +20,7 @@ cp .env.example .env
 # Edit .env and add your keys:
 # - ANTHROPIC_API_KEY=your-key-here
 # - JWT_SECRET=your-secret-key
+# - DEMO_USER_PASSWORD=your-demo-password
 ```
 
 Generate a secure JWT secret:
