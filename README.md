@@ -168,7 +168,7 @@ For detailed backend setup, see [Backend Quick Start](backend/QUICKSTART.md)
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/ebertolo/smart-summary.git
 cd smart-summary
 
 # 2. Configure the Backend
