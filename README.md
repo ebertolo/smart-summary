@@ -112,7 +112,7 @@ Control the target summary length as a percentage of the original text:
 ## 📁 Project Structure
 
 ```
-smart-summary-app/
+smart-summary/
 ├── backend/
 │   ├── app/
 │   │   ├── api/routes/        # API endpoints
@@ -161,29 +161,41 @@ For detailed backend setup, see [Backend Quick Start](backend/QUICKSTART.md)
 ### Prerequisites
 - Node.js 20+
 - Python 3.11+
-- Docker (optional)
+- Docker & Docker Compose
 - Anthropic API key ([Get one here](https://console.anthropic.com/))
 
-### Quick Start with Docker 🐳
-
-**Fastest way to get started!** See [QUICKSTART.md](QUICKSTART.md) for step-by-step instructions.
+### Quick Start with Docker 🐳 (Primeira Vez)
 
 ```bash
-# 1. Clone and setup
+# 1. Clone o repositório
 git clone <your-repo-url>
-cd smart-summary-app
-cp backend/.env.example backend/.env
-# Edit backend/.env and add your ANTHROPIC_API_KEY
+cd smart-summary
 
-# 2. Start with Docker
+# 2. Configure o Backend
+cp backend/.env.example backend/.env
+# Edite backend/.env e adicione suas chaves de API:
+# - ANTHROPIC_API_KEY=sua-chave-aqui
+# - Altere JWT_SECRET para uma nova chave segura
+# - Defina DEMO_USER_PASSWORD com sua senha preferida
+
+# 3. Configure o Frontend
+cp frontend/.env.example frontend/.env.local
+# O padrão já está correto: NEXT_PUBLIC_API_URL=http://localhost:8000
+
+# 4. Suba os containers (isso irá buildar e iniciar tudo)
 docker-compose up --build
 
-# 3. Access
+# 5. Acesse a aplicação
 # Frontend: http://localhost:3000
 # Backend API: http://localhost:8000/docs
 ```
 
-**Demo Credentials:** Username: `demo` / Password: `...........` (default demo user)
+**⚠️ IMPORTANTE:** 
+- Os arquivos `.env` (backend) e `.env.local` (frontend) **devem ser criados** antes de rodar o Docker
+- No arquivo `backend/.env`, **altere as chaves de API** (ANTHROPIC_API_KEY ou OPENAI_API_KEY)
+- O usuário demo é criado automaticamente com a senha definida em `DEMO_USER_PASSWORD`
+
+**Credenciais Demo:** Username: `demo` / Password: (conforme definido em `DEMO_USER_PASSWORD`)
 
 ### Local Development (Without Docker)
 
