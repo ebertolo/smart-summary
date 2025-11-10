@@ -6,6 +6,7 @@ FastAPI backend with JWT authentication and streaming summarization
 import os
 from contextlib import asynccontextmanager
 
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import select
@@ -15,6 +16,9 @@ from app.core.config import settings
 from app.core.database import AsyncSessionLocal, close_db, init_db
 from app.core.security import get_password_hash
 from app.models.database import User
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 async def create_demo_user_if_not_exists():
