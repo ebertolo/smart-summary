@@ -83,21 +83,32 @@ class TestTokenManager:
             assert token_count <= 50
 
     def test_model_limits(self):
-        """Test model limit retrieval"""
+        """Test model limit retrieval for Claude models"""
+        # All Claude models have 200K token limit
         limit = TokenManager.get_model_limit("claude-3-5-sonnet-20241022")
         assert limit == 200_000
 
-        limit = TokenManager.get_model_limit("gpt-4-turbo")
-        assert limit == 128_000
+        # Test with other Claude model variations
+        limit = TokenManager.get_model_limit("claude-3-opus")
+        assert limit == 200_000
+
+        limit = TokenManager.get_model_limit("claude-3-haiku")
+        assert limit == 200_000
 
     def test_different_models(self):
-        """Test initialization with different models"""
-        models = ["claude-3-5-sonnet-20241022", "gpt-4-turbo", "gemini-1.5-pro"]
+        """Test initialization with different Claude models"""
+        # Test various Claude model names
+        models = [
+            "claude-3-5-sonnet-20241022",
+            "claude-3-opus",
+            "claude-3-sonnet",
+            "claude-3-haiku",
+        ]
 
         for model in models:
             manager = TokenManager(model=model)
             assert manager.model == model
-            assert manager.max_tokens > 0
+            assert manager.max_tokens == 200_000  # All Claude models have 200K limit
 
             # Test counting works
             count = manager.count_tokens("Test text")
